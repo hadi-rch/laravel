@@ -16,6 +16,13 @@ class EnvironmentTest extends TestCase
         $youtube = env("YOUTUBE");
 
         self::assertEquals("Programmer Zaman Now", $youtube);
+        
+    }
+    public function testDefaultEnv(): void
+    {
+        $author = env("AUTHOR","Hadi"); //mengambil env AUTHOR kalau tidak ada maka default  Hadi
+        
+        self::assertEquals("Hadi", $author); 
 
     }
 }
